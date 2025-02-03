@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú y Fondo de Imagen</title>
+  <style>
+    /* Menú Estilizado */
+    .menu {
+      width: 250px;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      padding-top: 60px;
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      z-index: 10;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .menu a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: #444;
+      font-size: 18px;
+      font-family: 'Arial', sans-serif;
+      border-bottom: 1px solid #e0e0e0;
+      transition: background-color 0.3s ease, padding-left 0.3s ease;
+      padding-left: 30px;
+    }
+
+    .menu a:hover {
+      background-color: #f5a5c0;
+      padding-left: 40px;
+    }
+
+    .submenu {
+      display: none;
+      background-color: #f9f9f9;
+      margin-left: 20px;
+      border-radius: 5px;
+    }
+
+    .submenu a {
+      font-size: 16px;
+      padding: 15px;
+      color: #444;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .submenu a:hover {
+      background-color: #f5a5c0;
+    }
+
+    .submenu.show {
+      display: block;
+    }
+
+    /* Fondo de página como imagen */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('images/fondo.jpg');
+      /* Aquí va la imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+
+    /* Información centrada en el container */
+    .data {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #333;
+      padding: 40px;
+      text-align: center;
+      font-size: 20px;
+      font-family: 'Helvetica Neue', sans-serif;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      right: 1cm;
+      top: 1cm;
+      bottom: 0.7cm;
+      left: calc(250px + 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Para dispositivos móviles */
+    @media (max-width: 768px) {
+      .menu {
+        width: 200px;
+      }
+
+      .data {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+        position: relative;
+        top: auto;
+        transform: none;
+        padding: 20px;
+        left: 0;
+        right: 0;
+        margin-top: 1cm;
+        margin-bottom: 1cm;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu" (mouseleave)="hideSubMenu()">
+    <!-- Menú Desplegable -->
+    <a href="#" class="submenu-toggle" (mouseover)="showSubMenu()"><strong>Ejercicios</strong></a>
+    <div class="submenu" [class.show]="isSubMenuVisible" (mouseover)="showSubMenu()" (mouseleave)="hideSubMenu()">
+      <a href="#">Fundamentos</a>
+      <a href="#">Ejemplo 2</a>
+      <a href="#">Ejemplo 3</a>
+      <a href="#">Ejemplo 4</a>
+    </div>
+    <a href="#"><strong>Evaluación</strong></a>
+  </div>
+
+  <!-- Información centrada en el container -->
+  <div class="data">
+    <h2>Datos del Alumno</h2>
+    <br/>
+    <h4><strong>Universidad Tecnológica de San Juan del Río</strong></h4>
+    <br/>
+    <p><strong>Nombre:</strong> Karla Daniela Rosales Reséndiz
+    <p><strong>Grupo:</strong> DSO1SV-24 </p>
+    <p><strong>Asignatura:</strong> Desarrollo Web Profesional</p>
+    <p><strong>Profesor:</strong> Alejandro César Valencia García </p>
+
+  </div>
+</body>
+
+</html>
