@@ -67,7 +67,6 @@
       padding: 0;
       height: 100vh;
       background-image: url('images/fondo.jpg');
-      /* Aquí va la imagen de fondo */
       background-size: cover;
       background-position: center;
       display: flex;
@@ -123,14 +122,15 @@
 <body>
   <div class="menu" (mouseleave)="hideSubMenu()">
     <!-- Menú Desplegable -->
+    <a href="https://iniciop.netlify.app/" class="submenu-toggle" (mouseover)="showSubMenu()"><strong>Inicio</strong></a>
     <a href="#" class="submenu-toggle" (mouseover)="showSubMenu()"><strong>Ejercicios</strong></a>
     <div class="submenu" [class.show]="isSubMenuVisible" (mouseover)="showSubMenu()" (mouseleave)="hideSubMenu()">
-      <a href="#">Fundamentos</a>
-      <a href="#">Ejemplo 2</a>
-      <a href="#">Ejemplo 3</a>
-      <a href="#">Ejemplo 4</a>
+      <a href="https://fundamentosejemplo.netlify.app/">Fundamentos</a>
+      <a href="https://ejemplodos.netlify.app/">Ejemplo 2</a>
+      <a href="https://ejemplotres.netlify.app/">Ejemplo 3</a>
+      <a href="https://ejemplocuatro.netlify.app/">Ejemplo 4</a>
     </div>
-    <a href="#"><strong>Evaluación</strong></a>
+    <a href="https://evaluaciond.netlify.app/"><strong>Evaluación</strong></a>
   </div>
 
   <!-- Información centrada en el container -->
@@ -139,11 +139,10 @@
     <br/>
     <h4><strong>Universidad Tecnológica de San Juan del Río</strong></h4>
     <br/>
-    <p><strong>Nombre:</strong> Karla Daniela Rosales Reséndiz
+    <p><strong>Nombre:</strong> Karla Daniela Rosales Reséndiz</p>
     <p><strong>Grupo:</strong> DSO1SV-24 </p>
     <p><strong>Asignatura:</strong> Desarrollo Web Profesional</p>
     <p><strong>Profesor:</strong> Alejandro César Valencia García </p>
-
   </div>
 </body>
 
